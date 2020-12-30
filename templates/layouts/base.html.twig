@@ -43,12 +43,15 @@
 
             <!-- Custom styles for this template -->
         <link rel="stylesheet" href="{{ asset('assets/css/caroussel.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/laboutiqueduvetement.css') }}">
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
         {{ include('layouts/partials/header.html.twig') }}
-        <main role="main">
+        <main role="main" class="container">
+            {% if block('caroussel') is defined %}
             {{ include('layouts/partials/caroussel.html.twig') }}
+            {% endif %}
             {% block body %}{% endblock %}
         </main>
         {% block javascripts %}{% endblock %}

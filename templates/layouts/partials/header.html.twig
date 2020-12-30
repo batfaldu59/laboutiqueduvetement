@@ -17,10 +17,13 @@
                         <a class="nav-link" href="#">Contact</a>
                     </li>
                 </ul>
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
+                {% if app.user %}
+                    <a href="" class="nav-link account">Mon compte</a>
+                    <a href="" class="nav-link account">Déconnexion</a> |
+                {% else %}
+                    <a href="" class="nav-link account">Se connecter</a> |
+                    <a href="{{ path('app_signup') }}" class="nav-link account">Inscription</a>
+                {% endif %}
             </div>
         </div>
     </nav>
